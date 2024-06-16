@@ -4,7 +4,7 @@ trigger: none
 pr: none
 
 pool:
-   vmImage: 'Default'
+   vmImage: 'JIMS-XPS-15-202'
 
 jobs:
  - job: Deploy_Config_Dev
