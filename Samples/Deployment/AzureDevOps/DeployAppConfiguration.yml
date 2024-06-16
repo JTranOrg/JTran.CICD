@@ -16,7 +16,7 @@ stages:
             deploy:
               steps:
                 - task: JTranTransform@0.1.0
-                  parameters:
+                  inputs:
                     InputSourcePath:            $(Build.SourcesDirectory)/blanksource.json
                     TransformPath:              $(Build.SourcesDirectory)/Config.jtran
                     OutputDestinationPath:      $(Build.SourcesDirectory)/Output/output.json
