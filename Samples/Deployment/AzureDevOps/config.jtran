@@ -1,0 +1,22 @@
+{
+  "keyvault":
+  {
+    "keyvault": "#('kv-jtran-cicd-' + $environment)",
+    
+    "entries": 
+    [
+      "CustomerDatabaseConnectionString"
+    ]
+  },
+
+  "nonkeyvault":
+  {
+    "#variable(ApiBaseAddress)":        "#('https://app-jtran-cicd-' + $environment + '.fictionalcompany.com/')",
+
+    "InvoiceUrl":                       "#($ApiBaseAddress + 'invoices')",
+    "InventoryUrl":                     "#($ApiBaseAddress + 'inventory')",
+    "Phrase":                           "#($Phrase)",
+
+    "CosmosConnectionString":           "#('mongodb://mycompany.' + $environment + '.cosmos')"
+  }
+}

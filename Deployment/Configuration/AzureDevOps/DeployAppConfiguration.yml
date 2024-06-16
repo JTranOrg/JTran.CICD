@@ -1,0 +1,54 @@
+parameters:
+   ServiceConnection:        ''    
+   AppConfigurationEndpoint: ''    
+   ProjectFile:              ''    
+
+
+steps:
+
+################################################################################################
+### Install the jtran console app
+################################################################################################
+
+- task: PowerShell@2
+  displayName: 'Install the jtran console app'
+  inputs:
+    targetType: 'inline'
+    script: 'dotnet tool install jtrancmd -g'
+    errorActionPreference: 'continue'
+
+################################################################################################
+### Transform the config manifest
+################################################################################################
+
+- task: CmdLine@2
+  displayName: 'Transform configuration manifest'
+  inputs:
+    script: "jtrancmd -p ${{ parameters.ProjectFile }}"
+
+################################################################################################
+### Deploy the non-keyvault entries (this will delete all current entries)
+################################################################################################
+
+- task: AzureAppConfigurationPush@3
+  displayName: 'Push non-keyvault configuration entries to Azure App Configuration'
+  inputs:
+    azureSubscription:          ${{ parameters.ServiceConnection }}
+    AppConfigurationEndpoint:   ${{ parameters.AppConfigurationEndpoint }}
+    ConfigurationFile:          $(Build.SourcesDirectory)/Deployment/Configuration/nonkeyvault.json
+    Separator:                  ','
+    Strict:                     true
+
+################################################################################################
+### Deploy the keyvault references
+################################################################################################
+
+- task: AzureAppConfigurationPush@3
+  displayName: 'Push Keyvault References to Azure App Configuration'
+  inputs:
+    azureSubscription:          ${{ parameters.ServiceConnection }}
+    AppConfigurationEndpoint:   ${{ parameters.AppConfigurationEndpoint }}
+    ConfigurationFile:          $(Build.SourcesDirectory)/Deployment/Configuration/keyvault.json
+    Separator:                  ','
+    ContentType:                'application/vnd.microsoft.appconfig.keyvaultref+json;charset=utf-8'
+    Strict:                     false

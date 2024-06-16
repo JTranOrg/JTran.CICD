@@ -1,0 +1,57 @@
+{
+  "manifestVersion": 1,
+  "id": "JTranTransform",
+  "version": "0.1.0",
+  "name": "JTranTransform",
+  "publisher": "JTranOrg",
+  "description": "Does a json to json transformation using JTran",
+  "targets":
+  [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "categories":
+  [
+    "Azure Pipelines"
+  ],
+  "content":
+  {
+    "details":
+    {
+      "path": "readme.md"
+    }
+  },
+  "links":
+  {
+    "getstarted":
+    {
+      "uri": "https://github.com/JTranOrg/JTran/blob/master/docs/reference.md"
+    }
+  },
+  "repository":
+  {
+    "type": "git",
+    "uri": "https://github.com/JTranOrg/JTranCICD/Deployment/CustomTasks/JTranTransform/AzureDevops"
+  },
+  "files": [
+    {
+      "path": "buildandreleasetask"
+    }
+  ],
+  "contributions":
+  [
+    {
+      "id": "JTranTransform",
+      "type": "ms.vss-distributed-task.task",
+      "targets":
+      [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": 
+      {
+        "name": "buildandreleasetask"
+      }
+    }
+  ]
+}

@@ -1,2 +1,2 @@
 # JTran.CICD
-CICD related code for building and deploying using JTRan
+JTran transforms and deployment scripts, including JArm

@@ -1,0 +1,99 @@
+{
+  "$schema":      "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id":           "DC936F2F-3333-4A41-8879-DBB106E0EC9B",
+  "name":         "JTranTransform",
+  "friendlyName": "JTran Transformer",
+  "description":  "Does a json to json transformation using JTran",
+  "helpMarkDown": "",
+  "category":     "Utility",
+  "author":       "JTranOrg",
+  "version":
+  {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Echo $(samplestring)",
+  "inputs":
+  [
+    {
+      "name":           "InputSourcePath",
+      "type":           "string",
+      "label":          "Input Source Path",
+      "defaultValue":   "",
+      "required":       true,
+      "helpMarkDown":   "Source json file to transform"
+    },
+    {
+      "name":           "TransformPath",
+      "type":           "string",
+      "label":          "JTran transform file",
+      "defaultValue":   "",
+      "required":       true,
+      "helpMarkDown":   "Path of JTran transform file"
+    },
+    {
+      "name":           "OutputDestinationPath",
+      "type":           "string",
+      "label":          "Destination of output",
+      "defaultValue":   "",
+      "required":       true,
+      "helpMarkDown":   "Place to drop new transformed file(s)"
+    },
+    {
+      "name":           "IncludePath",
+      "type":           "string",
+      "label":          "Path of any include files",
+      "defaultValue":   "",
+      "required":       false,
+      "helpMarkDown":   "Path of any include files"
+    },
+    {
+      "name":           "DocumentPath",
+      "type":           "string",
+      "label":          "Path of any document files",
+      "defaultValue":   "",
+      "required":       false,
+      "helpMarkDown":   "Path of any document files"
+    },
+    {
+      "name":           "MultipleOutput",
+      "type":           "boolean",
+      "label":          "Specifies whether to output multiple files",
+      "defaultValue":   false,
+      "required":       false,
+      "helpMarkDown":   "Specifies whether to output multiple files"
+    },
+    {
+      "name":           "TransformParameters",
+      "type":           "string",
+      "label":          "-environment dev",
+      "defaultValue":   "",
+      "required":       false,
+      "helpMarkDown":   "Parameters to pass to transform"
+    },
+    {
+      "name":           "ArgumentsProviderPath",
+      "type":           "string",
+      "label":          "Path to an optional .Net dll to provide an arguments dictionary",
+      "defaultValue":   "",
+      "required":       false,
+      "helpMarkDown":   "Path of .Net dll that provides arguments."
+    },
+    {
+      "name":           "ArgumentsClass",
+      "type":           "string",
+      "label":          "Namespace and class name of dictionary",
+      "defaultValue":   "",
+      "required":       false,
+      "helpMarkDown":   "The fully qualified class name of a dictionary in the arguments provider dll. Must be in the format <namespace.class_name>. Class must be derived from IDictionary<string, object> and constructor must have no parameters."
+    }
+  ],
+  "execution":
+  {
+    "PowerShell3":
+    {
+      "target": "Transform.ps1"
+    }
+  }
+}

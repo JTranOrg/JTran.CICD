@@ -1,0 +1,22 @@
+{
+  "#array([])": 
+  {
+    "#arrayitem(1)":
+    {
+      "#outputvariable(FileName)":        "#($DestinationPath + 'keyvault.json')",
+      "#variable(keyvault)":               "#(keyvault.keyvault)",
+
+      "#foreach(keyvault.entries)": 
+      {
+        "#(@)":                           "#('https://' + $keyvault + '.vault.azure.net/secrets/' + @)"
+      }
+    },
+
+    "#arrayitem(2)":
+    {
+      "#outputvariable(FileName)":        "#($DestinationPath + 'nonkeyvault.json')",
+
+      "#noobject":                        "#copyof(nonkeyvault)"
+    }
+  }
+}

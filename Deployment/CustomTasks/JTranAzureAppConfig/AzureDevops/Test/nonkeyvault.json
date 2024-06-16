@@ -1,0 +1,13 @@
+{
+    "[]":
+    [
+        {
+            "CustomerDatabaseConnectionString": "https://kv-jtran-cicd-dev.vault.azure.net/secrets/CustomerDatabaseConnectionString"
+        },
+        {
+            "InvoiceUrl": "https://app-jtran-cicd-dev.fictionalcompany.com/invoices",
+            "InventoryUrl": "https://app-jtran-cicd-dev.fictionalcompany.com/inventory",
+            "CosmosConnectionString": "mongodb://mycompany.dev.cosmos"
+        }
+    ]
+}

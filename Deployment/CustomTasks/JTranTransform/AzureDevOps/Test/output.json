@@ -1,0 +1,16 @@
+{
+    "keyvault":
+    {
+        "keyvault": "kv-jtran-cicd-dev",
+        "entries":
+        [
+            "CustomerDatabaseConnectionString"
+        ]
+    },
+    "nonkeyvault":
+    {
+        "InvoiceUrl": "https://app-jtran-cicd-dev.fictionalcompany.com/invoices",
+        "InventoryUrl": "https://app-jtran-cicd-dev.fictionalcompany.com/inventory",
+        "CosmosConnectionString": "mongodb://mycompany.dev.cosmos"
+    }
+}
