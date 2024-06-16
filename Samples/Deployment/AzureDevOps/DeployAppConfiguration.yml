@@ -3,22 +3,12 @@ name: Sample App Configuration Pipeline
 trigger: none
 pr: none
 
-stages:
-
-  - stage:       Dev_Deploy_Config
-    displayName: 'Dev: Deploy Config'
-    pool:
-      vmImage:   windows-latest
-    jobs:
-      - deployment: Deploy_Config_Dev
-        environment: Dev
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-                - task: JTranTransform@0.1.0
-                  inputs:
-                    InputSourcePath:            $(Build.SourcesDirectory)/blanksource.json
-                    TransformPath:              $(Build.SourcesDirectory)/Config.jtran
-                    OutputDestinationPath:      $(Build.SourcesDirectory)/Output/output.json
-                    TransformParameters:        '-environment dev'
+jobs:
+ - job: Deploy_Config_Dev
+   steps:
+     - task: JTranTransform@0.1.0
+       inputs:
+         InputSourcePath:            $(Build.SourcesDirectory)/blanksource.json
+         TransformPath:              $(Build.SourcesDirectory)/Config.jtran
+         OutputDestinationPath:      $(Build.SourcesDirectory)/Output/output.json
+         TransformParameters:        '-environment dev'
