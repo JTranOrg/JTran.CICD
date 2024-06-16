@@ -4,7 +4,7 @@ trigger: none
 pr: none
 
 pool:
-   vmImage: 'windows-latest'
+   vmImage: 'Azure Pipelines'
 
 jobs:
  - job: Deploy_Config_Dev
