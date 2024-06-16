@@ -11,6 +11,7 @@ stages:
       vmImage:   windows-latest
     jobs:
       - deployment: Deploy_Config_Dev
+        environment: Dev
         strategy:
           runOnce:
             deploy:
