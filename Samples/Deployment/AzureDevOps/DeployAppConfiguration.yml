@@ -3,6 +3,9 @@ name: Sample App Configuration Pipeline
 trigger: none
 pr: none
 
+pool:
+   vmImage: 'windows-latest'
+
 jobs:
  - job: Deploy_Config_Dev
    steps:
