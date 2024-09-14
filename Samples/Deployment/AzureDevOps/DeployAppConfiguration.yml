@@ -17,5 +17,7 @@ jobs:
          TransformParameters:        '-environment dev'
 
      - task: PowerShell@2
+       displayName: 'Display Transform Output'
        inputs:
-         script:  get-content '$(Build.SourcesDirectory)/Output/output.json'
+         targetType: 'inline'
+         script:     Get-Content "$(Build.SourcesDirectory)/Output/output.json" | Write-Output
