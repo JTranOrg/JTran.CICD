@@ -17,4 +17,4 @@ jobs:
          TransformParameters:        '-environment dev'
 
      - powershell |
-         get-content $(Build.SourcesDirectory)/Output/output.json
+         get-content '$(Build.SourcesDirectory)/Output/output.json'
