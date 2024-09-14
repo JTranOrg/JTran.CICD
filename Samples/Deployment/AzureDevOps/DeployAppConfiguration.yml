@@ -9,6 +9,12 @@ pool:
 jobs:
  - job: Deploy_Config_Dev
    steps:
+     - task: PowerShell@2
+       displayName: 'Display Transform File'
+       inputs:
+         targetType: 'inline'
+         script:     Get-Content "$(Build.SourcesDirectory)/Config.jtran" | Write-Output
+
      - task: JTranTransform@0.1.1
        inputs:
          InputSourcePath:            $(Build.SourcesDirectory)/blanksource.json
