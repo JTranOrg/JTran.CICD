@@ -16,5 +16,6 @@ jobs:
          OutputDestinationPath:      $(Build.SourcesDirectory)/Output/output.json
          TransformParameters:        '-environment dev'
 
-     - powershell |
-         get-content '$(Build.SourcesDirectory)/Output/output.json'
+     - task: PowerShell@2
+       inputs:
+         script:  get-content '$(Build.SourcesDirectory)/Output/output.json'
