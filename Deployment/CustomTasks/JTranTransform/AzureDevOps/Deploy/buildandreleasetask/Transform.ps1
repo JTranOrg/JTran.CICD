@@ -42,7 +42,7 @@ echo '....'
 
 echo '....'
 echo 'Transforming input file(s)...'
-[string]$CommandLine = 'jtrancmd -t ' + $TransformPath + ' -s ' + $InputSourcePath + ' -o ' + $OutputDestinationPath + ' -m ' + $sMultipleOutput
+[string]$CommandLine = 'jtrancmd -se -t ' + $TransformPath + ' -s ' + $InputSourcePath + ' -o ' + $OutputDestinationPath + ' -m ' + $sMultipleOutput
 
         $CommandLine = if($IncludePath -ne '')         {$CommandLine + ' -i '  + '"' + $IncludePath + '"'}        else {$CommandLine} 
         $CommandLine = if($DocumentPath -ne '')        {$CommandLine + ' -d '  + '"' + $DocumentPath + '"'}       else {$CommandLine} 
