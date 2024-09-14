@@ -26,7 +26,7 @@ jobs:
          InputSourcePath:            $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/blanksource.json
          TransformPath:              $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/Config.jtran
          OutputDestinationPath:      $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/output.json
-         TransformParameters:        '-environment dev'
+         TransformParameters:        '-environment dev -ApiBaseAddress http://blah/'
 
      - task: PowerShell@2
        displayName: 'Display Transform Output'
