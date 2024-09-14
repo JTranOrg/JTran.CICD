@@ -10,6 +10,12 @@ jobs:
  - job: Deploy_Config_Dev
    steps:
      - task: PowerShell@2
+       displayName: 'Display Source Directory File'
+       inputs:
+         targetType: 'inline'
+         script:     Get-ChildItem -Path "$(Build.SourcesDirectory)"
+
+     - task: PowerShell@2
        displayName: 'Display Transform File'
        inputs:
          targetType: 'inline'
