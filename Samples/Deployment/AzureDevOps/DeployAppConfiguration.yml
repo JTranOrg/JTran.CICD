@@ -15,3 +15,6 @@ jobs:
          TransformPath:              $(Build.SourcesDirectory)/Config.jtran
          OutputDestinationPath:      $(Build.SourcesDirectory)/Output/output.json
          TransformParameters:        '-environment dev'
+
+     - powershell |
+         get-content $(Build.SourcesDirectory)/Output/output.json
