@@ -15,6 +15,7 @@
 
     "InvoiceUrl":                       "#($ApiBaseAddress + 'invoices')",
     "InventoryUrl":                     "#($ApiBaseAddress + 'inventory')",
+    "Phrase":                           "#($Phrase2)",
 
     "CosmosConnectionString":           "#('mongodb://mycompany.' + $environment + '.cosmos')"
   }
