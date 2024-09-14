@@ -25,11 +25,11 @@ jobs:
        inputs:
          InputSourcePath:            $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/blanksource.json
          TransformPath:              $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/Config.jtran
-         OutputDestinationPath:      $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/Output/output.json
+         OutputDestinationPath:      $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/output.json
          TransformParameters:        '-environment dev'
 
      - task: PowerShell@2
        displayName: 'Display Transform Output'
        inputs:
          targetType: 'inline'
-         script:     Get-Content "$(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/Output/output.json" | Write-Output
+         script:     Get-Content "$(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/output.json" | Write-Output
