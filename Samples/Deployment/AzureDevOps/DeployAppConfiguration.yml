@@ -9,7 +9,7 @@ pool:
 jobs:
  - job: Deploy_Config_Dev
    steps:
-     - task: JTranTransform@0.1.0
+     - task: JTranTransform@0.1.1
        inputs:
          InputSourcePath:            $(Build.SourcesDirectory)/blanksource.json
          TransformPath:              $(Build.SourcesDirectory)/Config.jtran

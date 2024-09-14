@@ -1,12 +1,9 @@
-##############################################################
-## Transforms a jtran transform source into a json (or multiple) destination
-##############################################################
 
 echo '##############################################################'
 echo '### JTranTransform'
 echo '###'
-echo '###    Transforms a jtran transform source into a json (or '
-echo '###      multiple) destination(s)'
+echo '###    Transforms a jtran transform source into a json destination'
+echo '###      (or multiple destinations)'
 echo '###'
 echo '### Copyright (c) June 2024 - Jim Lightfoot - All Rights Reserved'
 echo '###'
