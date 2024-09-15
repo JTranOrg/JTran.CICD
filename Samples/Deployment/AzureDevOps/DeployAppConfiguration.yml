@@ -9,19 +9,8 @@ pool:
 jobs:
  - job: Deploy_Config_Dev
    steps:
-     - task: PowerShell@2
-       displayName: 'Display Source Directory File'
-       inputs:
-         targetType: 'inline'
-         script:     Get-ChildItem -Path "$(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps"
-
-     - task: PowerShell@2
-       displayName: 'Display Transform File'
-       inputs:
-         targetType: 'inline'
-         script:     Get-Content "$(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/Config.jtran" | Write-Output
-
-     - task: JTranTransform@0.1.5
+     - task: JTranTransform@0.1.6
+       displayName: 'Transform Configuration File'
        inputs:
          InputSourcePath:            $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/blanksource.json
          TransformPath:              $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/Config.jtran

@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "JTranTransform",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "name": "JTranTransform",
   "publisher": "JTranOrg",
   "description": "Does a json to json transformation using JTran",
@@ -32,7 +32,7 @@
   "repository":
   {
     "type": "git",
-    "uri": "https://github.com/JTranOrg/JTranCICD/Deployment/CustomTasks/JTranTransform/AzureDevops"
+    "uri": "https://github.com/JTranOrg/JTran.CICD/Deployment//blob/main/CustomTasks/JTranTransform/AzureDevops"
   },
   "files": [
     {
