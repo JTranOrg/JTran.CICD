@@ -4,7 +4,7 @@
   "name":         "JTranTransform",
   "friendlyName": "JTranTransform",
   "description":  "Does a json to json transformation using JTran",
-  "helpMarkDown": "https://github.com/JTranOrg/JTran.CICD/blob/main/Deployment/CustomTasks/JTranTransform/AzureDevOps/readme.md",
+  "helpMarkDown": "https://github.com/JTranOrg/JTran.CICD/blob/main/Deployment/CustomTasks/JTranTransform/AzureDevOps/Deploy/readme.md",
   "category":     "Utility",
   "author":       "JTranOrg",
   "version":
