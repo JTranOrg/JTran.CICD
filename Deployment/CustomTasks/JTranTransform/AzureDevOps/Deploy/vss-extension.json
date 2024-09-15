@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "JTranTransform",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "name": "JTranTransform",
   "publisher": "JTranOrg",
   "description": "Does a json to json transformation using JTran",

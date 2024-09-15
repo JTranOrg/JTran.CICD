@@ -59,7 +59,9 @@ if($LASTEXITCODE -eq 0)
 }
 else
 {
-  Write-Error "Transform failed"
+    Write-Host "##vso[task.logissue type=error]Transform failed."
+    Write-Host "##vso[task.complete result=Failed]"
+    exit 0
 }
 
 ## .\Transform.ps1 C:\Development\Projects\JTranOrg\JTran.CICD\Deployment\CustomTasks\JTranTransform\AzureDevOps\Test\blanksource.json C:\Development\Projects\JTranOrg\JTran.CICD\Deployment\CustomTasks\JTranTransform\AzureDevOps\Test\config.jtran C:\Development\Testing\JTran\JTranTransform\output.json C:\Development\Testing\JTran\JTranTransform C:\Development\Testing\JTran\JTranTransform false "-environment 'prod'" "C:\Development\Projects\JTranOrg\JTran\Tests\TestArgumentsProvider\bin\Debug\net8.0\TestArgumentsProvider.dll" TestArgumentsProvider.MyArgs
