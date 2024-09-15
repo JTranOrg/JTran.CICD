@@ -1,9 +1,10 @@
 {
   "manifestVersion": 1,
   "id": "JTranTransform",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "name": "JTranTransform",
   "publisher": "JTranOrg",
+  "public":  true,
   "description": "Does a json to json transformation using JTran",
   "targets":
   [
@@ -11,6 +12,16 @@
       "id": "Microsoft.VisualStudio.Services"
     }
   ],
+  "tags": 
+  [
+    "JTran",
+    "Json",
+    "Transform"
+  ],
+  "icons": 
+  {
+        "default": "JTranTransform.bmp"
+    },
   "categories":
   [
     "Azure Pipelines"

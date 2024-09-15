@@ -4,3 +4,4 @@
 
 /.vs
 /agent
+*.vsix

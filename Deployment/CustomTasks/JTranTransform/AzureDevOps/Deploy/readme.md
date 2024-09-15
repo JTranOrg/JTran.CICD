@@ -4,7 +4,7 @@ This Azure DevOps task transforms a json file (or multiple files) using the jtra
 
 #### Example
 ```
-     - task: JTranTransform@1.0.0
+     - task: JTranTransform@1.0.2
        inputs:
          InputSourcePath:            $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/blanksource.json
          TransformPath:              $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/Config.jtran
