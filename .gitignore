@@ -4,3 +4,4 @@
 
 /.vs
 /agent
+/Deployment/CustomTasks/JTranTransform/AzureDevOps/Deploy/JTranOrg.JTranTransform-0.1.0.vsix
