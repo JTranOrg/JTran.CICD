@@ -60,7 +60,7 @@ if($LASTEXITCODE -eq 0)
 else
 {
     Write-Host "##vso[task.logissue type=error]Transform failed."
-    Write-Host "##vso[task.complete result=Failed]"
+    Write-Output "##vso[task.complete result=Failed;]Finished"
     exit 0
 }
 

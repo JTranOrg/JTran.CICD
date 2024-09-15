@@ -2,16 +2,16 @@
   "$schema":      "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
   "id":           "DC936F2F-3333-4A41-8879-DBB106E0EC9B",
   "name":         "JTranTransform",
-  "friendlyName": "JTran Transformer",
+  "friendlyName": "JTranTransform",
   "description":  "Does a json to json transformation using JTran",
-  "helpMarkDown": "",
+  "helpMarkDown": "https://github.com/JTranOrg/JTran.CICD/blob/main/Deployment/CustomTasks/JTranTransform/AzureDevOps/readme.md",
   "category":     "Utility",
   "author":       "JTranOrg",
   "version":
   {
     "Major": 0,
     "Minor": 1,
-    "Patch": 4
+    "Patch": 5
   },
   "instanceNameFormat": "Echo $(samplestring)",
   "inputs":

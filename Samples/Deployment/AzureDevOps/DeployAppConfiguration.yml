@@ -21,7 +21,7 @@ jobs:
          targetType: 'inline'
          script:     Get-Content "$(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/Config.jtran" | Write-Output
 
-     - task: JTranTransform@0.1.4
+     - task: JTranTransform@0.1.5
        inputs:
          InputSourcePath:            $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/blanksource.json
          TransformPath:              $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/Config.jtran

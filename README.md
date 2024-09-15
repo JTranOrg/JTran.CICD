@@ -1,2 +1,2 @@
 # JTran.CICD
-JTran transforms and deployment scripts, including JArm
+JTran transforms, deployment scripts, custom deployment pipeline tasks, etc
