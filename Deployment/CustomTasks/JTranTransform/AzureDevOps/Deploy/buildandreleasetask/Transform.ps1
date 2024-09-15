@@ -1,16 +1,14 @@
+
 ##############################################################
-## Transforms a jtran transform source into a json (or multiple) destination
+### JTranTransform
+###
+###    Transforms a jtran transform source into a json destination
+###      (or multiple destinations)
+###
+### Copyright (c) 2024 - Jim Lightfoot - All Rights Reserved
+###
 ##############################################################
 
-echo '##############################################################'
-echo '### JTranTransform'
-echo '###'
-echo '###    Transforms a jtran transform source into a json (or '
-echo '###      multiple) destination(s)'
-echo '###'
-echo '### Copyright (c) June 2024 - Jim Lightfoot - All Rights Reserved'
-echo '###'
-echo '##############################################################'
 echo '....'
 echo 'Starting JTran transformation...'
 echo '....'
@@ -45,7 +43,7 @@ echo '....'
 
 echo '....'
 echo 'Transforming input file(s)...'
-[string]$CommandLine = 'jtrancmd -t ' + $TransformPath + ' -s ' + $InputSourcePath + ' -o ' + $OutputDestinationPath + ' -m ' + $sMultipleOutput
+[string]$CommandLine = 'jtrancmd -se -t ' + $TransformPath + ' -s ' + $InputSourcePath + ' -o ' + $OutputDestinationPath + ' -m ' + $sMultipleOutput
 
         $CommandLine = if($IncludePath -ne '')         {$CommandLine + ' -i '  + '"' + $IncludePath + '"'}        else {$CommandLine} 
         $CommandLine = if($DocumentPath -ne '')        {$CommandLine + ' -d '  + '"' + $DocumentPath + '"'}       else {$CommandLine} 
@@ -55,6 +53,15 @@ echo 'Transforming input file(s)...'
 Invoke-Expression $CommandLine
 
 echo '....'
-echo '...Successful'
+
+if($LASTEXITCODE -eq 0)
+{
+  echo '...Transform succeeded'
+}
+else
+{
+    Write-Host "##vso[task.logissue type=error]Transform failed."
+    Write-Output "##vso[task.complete result=Failed;]Finished"
+}
 
 ## .\Transform.ps1 C:\Development\Projects\JTranOrg\JTran.CICD\Deployment\CustomTasks\JTranTransform\AzureDevOps\Test\blanksource.json C:\Development\Projects\JTranOrg\JTran.CICD\Deployment\CustomTasks\JTranTransform\AzureDevOps\Test\config.jtran C:\Development\Testing\JTran\JTranTransform\output.json C:\Development\Testing\JTran\JTranTransform C:\Development\Testing\JTran\JTranTransform false "-environment 'prod'" "C:\Development\Projects\JTranOrg\JTran\Tests\TestArgumentsProvider\bin\Debug\net8.0\TestArgumentsProvider.dll" TestArgumentsProvider.MyArgs
