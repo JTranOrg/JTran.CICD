@@ -9,7 +9,7 @@ pool:
 jobs:
  - job: Deploy_Config_Dev
    steps:
-     - task: JTranTransform@1.0.0
+     - task: JTranTransform@1.0.1
        displayName: 'Transform Configuration File'
        inputs:
          InputSourcePath:            $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/blanksource.json
