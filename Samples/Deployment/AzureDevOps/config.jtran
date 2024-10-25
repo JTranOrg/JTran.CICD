@@ -9,6 +9,8 @@
     ]
   },
 
+  "#assert(contains(['dev', 'test', 'prod'], $environment))":     "Environment must be dev, test or prod",
+
   "nonkeyvault":
   {
     "#variable(ApiBaseAddress)":        "#('https://app-jtran-cicd-' + $environment + '.fictionalcompany.com/')",

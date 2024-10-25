@@ -13,7 +13,7 @@ jobs:
        displayName: 'Transform Configuration File'
        inputs:
          InputSourcePath:            $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/blanksource.json
-         TransformPath:              $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/Config.jtran
+         TransformPath:              $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/config.jtran
          OutputDestinationPath:      $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/output.json
          TransformParameters:        '-environment dev -Phrase hello'
 
