@@ -34,7 +34,7 @@ jobs:
      ### Deploy the non-keyvault entries (this will delete all current entries)
      ################################################################################################
      
-     - task: AzureAppConfigurationPush@3
+     - task: AzureAppConfigurationPush@7
        displayName: 'Push non-keyvault configuration entries to Azure App Configuration'
        inputs:
          azureSubscription:          'spn-jtran-cicd-dev'
@@ -47,7 +47,7 @@ jobs:
      ### Deploy the keyvault references
      ################################################################################################
      
-     - task: AzureAppConfigurationPush@3
+     - task: AzureAppConfigurationPush@7
        displayName: 'Push Keyvault References to Azure App Configuration'
        inputs:
          azureSubscription:          'spn-jtran-cicd-dev'
