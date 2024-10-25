@@ -1,24 +1,29 @@
 {
   "#assert(contains(['dev', 'test', 'prod'], $environment))":     "#('Environment must be dev, test or prod. Actual value is ' + $environment)",
 
-  "keyvault":
+  "#array([])": 
   {
-    "keyvault": "#('kv-jtran-cicd-' + $environment)",
+    "#arrayitem(1)": 
+    {
+      "#outputvariable(FileName)": "#($DestinationPath + 'keyvault.json')",
+      "keyvault":                  "#('kv-jtran-cicd-' + $environment)",
     
-    "entries": 
-    [
-      "CustomerDatabaseConnectionString"
-    ]
-  },
+      "entries": 
+      [
+        "CustomerDatabaseConnectionString"
+      ]
+    },
 
-  "nonkeyvault":
-  {
-    "#variable(ApiBaseAddress)":        "#('https://app-jtran-cicd-' + $environment + '.fictionalcompany.com/')",
+    "#arrayitem(2)": 
+    {
+      "#outputvariable(FileName)":      "#($destpath + 'nonkeyvault.json')",
+      "#variable(ApiBaseAddress)":        "#('https://appcs-jtran-cicd-' + $environment + '.fictionalcompany.com/')",
 
-    "InvoiceUrl":                       "#($ApiBaseAddress + 'invoices')",
-    "InventoryUrl":                     "#($ApiBaseAddress + 'inventory')",
-    "Phrase":                           "#($Phrase)",
+      "InvoiceUrl":                       "#($ApiBaseAddress + 'invoices')",
+      "InventoryUrl":                     "#($ApiBaseAddress + 'inventory')",
+      "Phrase":                           "#($Phrase)",
 
-    "CosmosConnectionString":           "#('mongodb://mycompany.' + $environment + '.cosmos')"
+      "CosmosConnectionString":           "#('mongodb://mycompany.' + $environment + '.cosmos')"
+    }
   }
 }
