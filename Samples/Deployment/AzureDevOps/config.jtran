@@ -1,5 +1,5 @@
 {
-  "#assert(contains(['devx', 'test', 'prod'], $environment))":     "#('Environment must be dev, test or prod: ' + $environment)",
+  "#assert(contains(['dev', 'test', 'prod'], $environment))":     "#('Environment must be dev, test or prod. Actual value is ' + $environment)",
 
   "keyvault":
   {
