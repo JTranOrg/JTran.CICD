@@ -14,7 +14,7 @@ jobs:
        inputs:
          InputSourcePath:            $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/blanksource.json
          TransformPath:              $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/config.jtran
-         OutputDestinationPath:      $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps
+         OutputDestinationPath:      $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/
          MultipleOutput:             true
          TransformParameters:        '-environment dev -Phrase hello'
 
