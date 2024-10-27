@@ -33,26 +33,27 @@ jobs:
      ################################################################################################
      ### Deploy the non-keyvault entries (this will delete all current entries)
      ################################################################################################
-     
-     - task: AzureAppConfigurationPush@7
-       displayName: 'Push non-keyvault configuration entries to Azure App Configuration'
-       inputs:
-         azureSubscription:          'spn-jtran-cicd-dev'
-         AppConfigurationEndpoint:   'https://appcs-jtran-cicd-dev.azconfig.io'
-         ConfigurationFile:          $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/nonkeyvault.json
-         Separator:                  ','
-         Strict:                     true
-     
-     ################################################################################################
-     ### Deploy the keyvault references
-     ################################################################################################
-     
-     - task: AzureAppConfigurationPush@7
-       displayName: 'Push Keyvault References to Azure App Configuration'
-       inputs:
-         azureSubscription:          'spn-jtran-cicd-dev'
-         AppConfigurationEndpoint:   'https://appcs-jtran-cicd-dev.azconfig.io'
-         ConfigurationFile:          $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/keyvault.json
-         Separator:                  ','
-         ContentType:                'application/vnd.microsoft.appconfig.keyvaultref+json;charset=utf-8'
-         Strict:                     false
+     ##
+     ##- task: AzureAppConfigurationPush@7
+     ##  displayName: 'Push non-keyvault configuration entries to Azure App Configuration'
+     ##  inputs:
+     ##    azureSubscription:          'spn-jtran-cicd-dev'
+     ##    AppConfigurationEndpoint:   'https://appcs-jtran-cicd-dev.azconfig.io'
+     ##    ConfigurationFile:          $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/nonkeyvault.json
+     ##    Separator:                  ','
+     ##    Strict:                     true
+     ##
+     ##################################################################################################
+     ##### Deploy the keyvault references
+     ##################################################################################################
+     ##
+     ##- task: AzureAppConfigurationPush@7
+     ##  displayName: 'Push Keyvault References to Azure App Configuration'
+     ##  inputs:
+     ##    azureSubscription:          'spn-jtran-cicd-dev'
+     ##    AppConfigurationEndpoint:   'https://appcs-jtran-cicd-dev.azconfig.io'
+     ##    ConfigurationFile:          $(Build.SourcesDirectory)/Samples/Deployment/AzureDevOps/keyvault.json
+     ##    Separator:                  ','
+     ##    ContentType:                'application/vnd.microsoft.appconfig.keyvaultref+json;charset=utf-8'
+     ##    Strict:                     false
+     ##

@@ -16,7 +16,7 @@
 
     "#arrayitem(2)": 
     {
-      "#outputvariable(FileName)":      "#($destpath + 'nonkeyvault.json')",
+      "#outputvariable(FileName)":        "#($destpath + 'nonkeyvault.json')",
       "#variable(ApiBaseAddress)":        "#('https://appcs-jtran-cicd-' + $environment + '.fictionalcompany.com/')",
 
       "InvoiceUrl":                       "#($ApiBaseAddress + 'invoices')",
